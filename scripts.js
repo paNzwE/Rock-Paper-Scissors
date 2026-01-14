@@ -36,13 +36,23 @@ if ( checkPersonChoice === randomChoice) {
         computerScore++;
     }
 } 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-console.log("Human:", humanSelection);
-console.log("Computer:", computerSelection);
-
+function playGame() {
+    
+ for ( let i = 1; i <= 5; i++){
+    console.log("Round", i);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    console.log("Human", humanSelection);
+    console.log("Computer", computerSelection);
 playRound(humanSelection, computerSelection);
+ } 
+ console.log ("FINAL SCORE IS:")
+ console.log("Human score is:", humanScore);
+ console.log("Computer score is:", computerScore);
+
+}
+playGame();
 
 
 
