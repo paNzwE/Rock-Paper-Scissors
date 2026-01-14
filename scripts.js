@@ -13,14 +13,36 @@ if (random === 1) {
 }
 return randomChoice;
 }
-console.log(getComputerChoice());
+
 
 function getHumanChoice() {
-let personChoice = prompt("Please enter your choice!", "")
-return personChoice;
+const personChoice = prompt("Please enter your choice!", "")
+const checkPersonChoice = personChoice.toLowerCase();
+return checkPersonChoice;
 
 }
-console.log(getHumanChoice());
+
+
+function playRound(checkPersonChoice, randomChoice){ 
+if ( checkPersonChoice === randomChoice) {
+    console.log("Its a draw!")
+}   else if ((checkPersonChoice === "paper" && randomChoice === "rock") ||
+    (checkPersonChoice === "rock" && randomChoice === "scissors") ||
+    (checkPersonChoice === "scissors" && randomChoice === "paper")){
+        console.log("You won!");
+        humanScore++;
+    } else {
+        console.log("You lose! ");
+        computerScore++;
+    }
+} 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log("Human:", humanSelection);
+console.log("Computer:", computerSelection);
+
+playRound(humanSelection, computerSelection);
 
 
 
