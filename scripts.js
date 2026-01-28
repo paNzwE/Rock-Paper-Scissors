@@ -36,22 +36,31 @@ if ( checkPersonChoice === randomChoice) {
         computerScore++;
     }
 } 
+const rockBtn = document.createElement("button");
+const paperBtn = document.createElement("button");
+const scissorsBtn = document.createElement("button");
 
-function playGame() {
-    
- for ( let i = 1; i <= 5; i++){
-    console.log("Round", i);
-    const humanSelection = getHumanChoice();
+rockBtn.addEventListener("click", () => {
+    const humanSelection = "rock";
     const computerSelection = getComputerChoice();
-    console.log("Human", humanSelection);
-    console.log("Computer", computerSelection);
-playRound(humanSelection, computerSelection);
- } 
+    playRound(humanSelection, computerSelection)});
+ 
+paperBtn.addEventListener("click", () => {
+    const humanSelection = "paper";
+    const computerSelection = getComputerChoice();
+     playRound(humanSelection, computerSelection)});
+ 
+scissorsBtn.addEventListener("click", () => {
+    const humanSelection = "scissors";
+    const computerSelection = getComputerChoice();
+     playRound(humanSelection, computerSelection)}); 
+
+     
  console.log ("FINAL SCORE IS:")
  console.log("Human score is:", humanScore);
  console.log("Computer score is:", computerScore);
 
-}
+
 playGame();
 
 
